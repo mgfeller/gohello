@@ -36,7 +36,8 @@ func main() {
             ClientAuth: tls.RequireAnyClientCert,
             MinVersion: tls.VersionTLS12,
         },
-        Addr: "127.0.0.1" + PORT,
+//        Addr: "127.0.0.1" + PORT,
+	Addr: PORT,
     }
 
     http.HandleFunc("/", rootHandler)
