@@ -8,7 +8,7 @@ import (
 )
 
 const (
-    PORT       = ":8443"
+    PORT       = ":443"
     PRIV_KEY   = "./private.pem"
     PUBLIC_KEY = "./public.pem"
 )
@@ -36,7 +36,7 @@ func main() {
             ClientAuth: tls.RequireAnyClientCert,
             MinVersion: tls.VersionTLS12,
         },
-        Addr: "127.0.0.1:8443",
+        Addr: "127.0.0.1" + PORT,
     }
 
     http.HandleFunc("/", rootHandler)
